@@ -1,0 +1,13 @@
+---
+# Go Version is used to keep the current project
+# and sub modules using the same required version
+go_version: 1.19
+# Projects allows a list of projects to be 
+# defined and use their package version
+projects:
+- package: uber.org/zap
+  version: latest
+- package: github.com/open-telemetry/opentelemetry-collector
+  version: latest
+  match:
+  - regexp:^github.com/open-telemetry/opentelemetry-collector/(.*)$$
