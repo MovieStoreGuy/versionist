@@ -56,6 +56,8 @@ func main() {
 		m,
 		resolve.WithLogger(log.Named("modifier")),
 	)
-	modifier.Update()
+	if err := modifier.Update(); err != nil {
+		log.Error("Failed to modifier go.mod files", zap.Error(err))
+	}
 	log.Info("Finished processing mod files")
 }
